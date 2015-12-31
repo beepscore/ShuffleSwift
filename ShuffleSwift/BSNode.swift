@@ -11,8 +11,8 @@ import Foundation
 class BSNode : NSObject {
 
     var value: String? = nil
-    var index0: NSInteger? = 0
-    var index1: NSInteger? = 0
+    var index0: Int? = 0
+    var index1: Int? = 0
     var left: BSNode? = nil
     var right: BSNode? = nil
 
