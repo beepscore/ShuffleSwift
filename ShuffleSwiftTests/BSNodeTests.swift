@@ -30,4 +30,24 @@ class BSNodeTests: XCTestCase {
         XCTAssertEqual(nil, node.right)
     }
 
+    func testConvenienceInitializer() {
+        // Setup
+        // Use default initializer to instantiate child nodes for use as arguments
+        let larry = BSNode()
+        larry.value = "Larry"
+        XCTAssertEqual("Larry", larry.value)
+
+        let rick = BSNode()
+        rick.value = "Rick"
+        XCTAssertEqual("Rick", rick.value)
+
+        // method under test - convenience initializer
+        let joe = BSNode.init(value: "Joe", index0: 4, index1: 2, left: larry, right: rick)
+        XCTAssertEqual("Joe", joe.value)
+        XCTAssertEqual(4, joe.index0)
+        XCTAssertEqual(2, joe.index1)
+        XCTAssertEqual(larry, joe.left)
+        XCTAssertEqual(rick, joe.right)
+
+    }
 }
