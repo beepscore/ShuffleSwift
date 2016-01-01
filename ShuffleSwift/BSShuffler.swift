@@ -45,6 +45,19 @@ class BSShuffler : NSObject {
 
     //==========================================================================
 
+    /**
+    * Checks several edge cases such as arguments empty strings
+    * Returns BSShuffleValidityCode instead of boolean (true, false)
+    * @param shuffledString
+    * @param string0
+    * @param string1
+    * @return BSShuffleValidityCode.Valid if shuffledString is a valid shuffle
+    * of string0 and string1.
+    * return BSShuffleValidityCode.NotValid if shuffledString is not a valid shuffle
+    * of string0 and string1.
+    * return BSShuffleValidityCode.Unknown if method can't tell if shuffledString
+    * is a valid shuffle of string0 and string1.
+    */
     class func isValidShuffleForEdgeCases(shuffledString: String,
         string0: String,
         string1: String) -> BSShuffleValidityCode {
