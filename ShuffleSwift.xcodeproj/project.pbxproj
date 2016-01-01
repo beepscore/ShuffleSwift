@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE02D0EF1C3634B0007BA442 /* BSShuffler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE02D0EE1C3634B0007BA442 /* BSShuffler.swift */; };
+		DE02D0F11C363A97007BA442 /* BSStringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE02D0F01C363A97007BA442 /* BSStringUtils.swift */; };
+		DE02D0F31C363FCA007BA442 /* BSShufflerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE02D0F21C363FCA007BA442 /* BSShufflerTests.swift */; };
+		DE57BF051C3648E300159232 /* BSStringUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57BF041C3648E300159232 /* BSStringUtilsTests.swift */; };
 		DEB25CE11C32428A00D6C710 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB25CE01C32428A00D6C710 /* AppDelegate.swift */; };
 		DEB25CE31C32428A00D6C710 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB25CE21C32428A00D6C710 /* ViewController.swift */; };
 		DEB25CE61C32428A00D6C710 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEB25CE41C32428A00D6C710 /* Main.storyboard */; };
@@ -28,6 +32,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DE02D0EE1C3634B0007BA442 /* BSShuffler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSShuffler.swift; sourceTree = "<group>"; };
+		DE02D0F01C363A97007BA442 /* BSStringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSStringUtils.swift; sourceTree = "<group>"; };
+		DE02D0F21C363FCA007BA442 /* BSShufflerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSShufflerTests.swift; sourceTree = "<group>"; };
+		DE57BF041C3648E300159232 /* BSStringUtilsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSStringUtilsTests.swift; sourceTree = "<group>"; };
 		DEB25CDD1C32428A00D6C710 /* ShuffleSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShuffleSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEB25CE01C32428A00D6C710 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEB25CE21C32428A00D6C710 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +96,8 @@
 				DEB25CE91C32428A00D6C710 /* LaunchScreen.storyboard */,
 				DEB25CEC1C32428A00D6C710 /* Info.plist */,
 				DECC2F701C32470B00235F8A /* BSNode.swift */,
+				DE02D0EE1C3634B0007BA442 /* BSShuffler.swift */,
+				DE02D0F01C363A97007BA442 /* BSStringUtils.swift */,
 			);
 			path = ShuffleSwift;
 			sourceTree = "<group>";
@@ -98,6 +108,8 @@
 				DEB25CF51C32428A00D6C710 /* ShuffleSwiftTests.swift */,
 				DEB25CF71C32428A00D6C710 /* Info.plist */,
 				DECC2F721C324EB800235F8A /* BSNodeTests.swift */,
+				DE02D0F21C363FCA007BA442 /* BSShufflerTests.swift */,
+				DE57BF041C3648E300159232 /* BSStringUtilsTests.swift */,
 			);
 			path = ShuffleSwiftTests;
 			sourceTree = "<group>";
@@ -204,8 +216,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEB25CE31C32428A00D6C710 /* ViewController.swift in Sources */,
+				DE02D0F11C363A97007BA442 /* BSStringUtils.swift in Sources */,
 				DEB25CE11C32428A00D6C710 /* AppDelegate.swift in Sources */,
 				DECC2F711C32470B00235F8A /* BSNode.swift in Sources */,
+				DE02D0EF1C3634B0007BA442 /* BSShuffler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,8 +227,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE02D0F31C363FCA007BA442 /* BSShufflerTests.swift in Sources */,
 				DECC2F731C324EB800235F8A /* BSNodeTests.swift in Sources */,
 				DEB25CF61C32428A00D6C710 /* ShuffleSwiftTests.swift in Sources */,
+				DE57BF051C3648E300159232 /* BSStringUtilsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +412,7 @@
 				DEB25CFC1C32428A00D6C710 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DEB25CFD1C32428A00D6C710 /* Build configuration list for PBXNativeTarget "ShuffleSwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -404,6 +421,7 @@
 				DEB25CFF1C32428A00D6C710 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
