@@ -9,7 +9,14 @@
 import Foundation
 
 class BSShuffler : NSObject {
-    
+
+    // https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Enumerations.html
+    enum BSShuffleValidityCode {
+        case Unknown
+        case NotValid
+        case Valid
+    }
+
     class func isNodeValueEqualToValue(node: BSNode, value: String) -> Bool {
         if (node.value == value) {
             return true
@@ -34,6 +41,36 @@ class BSShuffler : NSObject {
         } else {
             return false
         }
+    }
+
+    //==========================================================================
+
+    class func isValidShuffleForEdgeCases(shuffledString: String,
+        string0: String,
+        string1: String) -> BSShuffleValidityCode {
+            
+            if (shuffledString == "") {
+                if ((string0 == "") && (string1 == "")) {
+                        return BSShuffleValidityCode.Valid
+                } else {
+                    return BSShuffleValidityCode.NotValid
+                }
+            }
+            
+            if ((string0 == "") && (string1 == "")) {
+                    return BSShuffleValidityCode.NotValid
+            }
+            
+            if ((string0 == "")
+                && (string1 == shuffledString)) {
+                    return BSShuffleValidityCode.Valid
+            }
+            
+            if ((string1 == "")
+                && (string0 == shuffledString)) {
+                    return BSShuffleValidityCode.Valid
+            }
+            return BSShuffleValidityCode.Unknown
     }
     
 }
