@@ -78,4 +78,5 @@ class BSStringUtilsTests: XCTestCase {
         XCTAssertEqual(testString, BSStringUtils.safeSubstringInclusive("a",
             startIndex:testString.startIndex, endIndex:testString.endIndex))
     }
+
 }
