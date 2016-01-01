@@ -16,5 +16,32 @@ class BSStringUtilsTests: XCTestCase {
         
         XCTAssertFalse(BSStringUtils.isStringEmpty("B"));
     }
-    
+
+    func testPracticeUsingSwiftSubstrings () {
+        var testString = ""
+        XCTAssertEqual(testString, testString.substringFromIndex(testString.startIndex))
+        XCTAssertEqual("", testString.substringFromIndex(testString.endIndex))
+        
+        testString = "a"
+        XCTAssertEqual(testString, testString.substringFromIndex(testString.startIndex))
+        XCTAssertEqual("", testString.substringFromIndex(testString.startIndex.advancedBy(1)))
+        // This crashes with error message - fatal error: can not increment endIndex (sic)
+        // XCTAssertEqual("", testString.substringFromIndex(testString.startIndex.advancedBy(2)))
+
+        XCTAssertEqual("", testString.substringFromIndex(testString.endIndex))
+        XCTAssertEqual("a", testString.substringFromIndex(testString.endIndex.predecessor()))
+        XCTAssertEqual("a", testString.substringFromIndex(testString.endIndex.advancedBy(-1)))
+        // This crashes with error message - fatal error: can not decrement startIndex (sic)
+        // XCTAssertEqual("a", testString.substringFromIndex(testString.endIndex.advancedBy(-2)))
+        
+        testString = "ab"
+        XCTAssertEqual(testString, testString.substringFromIndex(testString.startIndex))
+        XCTAssertEqual("b", testString.substringFromIndex(testString.startIndex.advancedBy(1)))
+        XCTAssertEqual("", testString.substringFromIndex(testString.endIndex))
+        XCTAssertEqual("b", testString.substringFromIndex(testString.endIndex.predecessor()))
+        
+        testString = "abc"
+        XCTAssertEqual("c", testString.substringFromIndex(testString.endIndex.predecessor()))
+    }
+
 }
