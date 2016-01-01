@@ -17,11 +17,11 @@ class BSStringUtilsTests: XCTestCase {
         XCTAssertFalse(BSStringUtils.isStringEmpty("B"));
     }
 
-    func testPracticeUsingSwiftSubstrings () {
+    func testPracticeUsingSwiftSubstringFromIndex () {
         var testString = ""
         XCTAssertEqual(testString, testString.substringFromIndex(testString.startIndex))
         XCTAssertEqual("", testString.substringFromIndex(testString.endIndex))
-        
+
         testString = "a"
         XCTAssertEqual(testString, testString.substringFromIndex(testString.startIndex))
         XCTAssertEqual("", testString.substringFromIndex(testString.startIndex.advancedBy(1)))
@@ -33,15 +33,40 @@ class BSStringUtilsTests: XCTestCase {
         XCTAssertEqual("a", testString.substringFromIndex(testString.endIndex.advancedBy(-1)))
         // This crashes with error message - fatal error: can not decrement startIndex (sic)
         // XCTAssertEqual("a", testString.substringFromIndex(testString.endIndex.advancedBy(-2)))
-        
+
         testString = "ab"
         XCTAssertEqual(testString, testString.substringFromIndex(testString.startIndex))
         XCTAssertEqual("b", testString.substringFromIndex(testString.startIndex.advancedBy(1)))
         XCTAssertEqual("", testString.substringFromIndex(testString.endIndex))
         XCTAssertEqual("b", testString.substringFromIndex(testString.endIndex.predecessor()))
-        
+
         testString = "abc"
         XCTAssertEqual("c", testString.substringFromIndex(testString.endIndex.predecessor()))
+    }
+
+    func testPracticeUsingSwiftSubstringToIndex () {
+        var testString = ""
+        XCTAssertEqual(testString, testString.substringToIndex(testString.endIndex))
+        testString = "a"
+        XCTAssertEqual(testString, testString.substringToIndex(testString.endIndex))
+    }
+
+    func testPracticeUsingSwiftSubstringWithRange () {
+        var testString = ""
+        XCTAssertEqual(testString,
+            testString.substringWithRange(testString.startIndex..<testString.endIndex))
+
+        testString = "ab"
+        XCTAssertEqual(testString,
+            testString.substringWithRange(testString.startIndex..<testString.endIndex))
+        
+        testString = "abc"
+        XCTAssertEqual(testString,
+            testString.substringWithRange(testString.startIndex..<testString.endIndex))
+
+        testString = "abcd"
+        XCTAssertEqual("bc",
+            testString.substringWithRange(testString.startIndex.successor()..<testString.endIndex.predecessor()))
     }
 
 }
