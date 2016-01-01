@@ -17,6 +17,12 @@ class BSShuffler : NSObject {
         case Valid
     }
 
+    /** Contains values of nodes visited.
+     *  Note node values are not guaranteed to be unique.
+     *  Useful during development for examining traversal history.
+     */
+    var nodesSearched: Array<String> = []
+
     class func isNodeValueEqualToValue(node: BSNode, value: String) -> Bool {
         if (node.value == value) {
             return true
@@ -45,6 +51,7 @@ class BSShuffler : NSObject {
         }
     }
 
+    //==========================================================================
     // MARK: -
 
     /**
@@ -132,4 +139,28 @@ class BSShuffler : NSObject {
             }
     }
 
+    //==========================================================================
+    // MARK: -
+    /**
+    * This method has side effect sets self.nodesSearched to empty array.
+    * @param queue declared inout so function can mutate it's value
+    * caller must use &queue
+    */
+    func addRootNodeToQueue(inout queue : Array<BSNode>) {
+        // this index value signifies node has no letters from that source
+        // e.g. if node.index0 == -1, node.value contains no letters from string0
+        let indexBeforeSourceStart = -1;
+        
+        self.nodesSearched = []
+        
+        // root node has empty value and no letters from either source string
+        let rootNode = BSNode(value: "",
+            index0: indexBeforeSourceStart,
+            index1: indexBeforeSourceStart,
+            left: nil, right: nil)
+        
+        // queue, add to end of array
+        queue.append(rootNode)
+    }
+    
 }

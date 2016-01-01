@@ -65,4 +65,24 @@ class BSShufflerTests: XCTestCase {
         XCTAssertEqual(BSShuffler.BSShuffleValidityCode.NotValid,
             BSShuffler.isValidShuffleForEdgeCases("abc", string0:"", string1:""))
     }
+
+    func testAddRootNodeToQueue() {
+
+        let shuffler = BSShuffler()
+        var queue : Array<BSNode> = []
+
+        XCTAssertEqual(0, queue.count)
+
+        //addRootNodeToQueue mutates inout argument queue so must call as &queue
+        shuffler.addRootNodeToQueue(&queue)
+        XCTAssertEqual(1, queue.count)
+
+        let rootNode : BSNode = queue.last!
+
+        XCTAssertEqual("", rootNode.value)
+        XCTAssertEqual(-1, rootNode.index0)
+        XCTAssertEqual(-1, rootNode.index1)
+        XCTAssertEqual(nil, rootNode.left)
+        XCTAssertEqual(nil, rootNode.right)
+    }
 }
