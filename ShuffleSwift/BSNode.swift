@@ -10,7 +10,7 @@ import Foundation
 
 class BSNode : NSObject {
 
-    var value: String? = nil
+    var value: String = ""
     var index0: Int? = 0
     var index1: Int? = 0
     var left: BSNode? = nil
@@ -30,17 +30,10 @@ class BSNode : NSObject {
     override var description : String {
         
         let SEPARATOR_SPACE = ", "
-        var valueString = ""
         var index0String = ""
         var index1String = ""
         var leftString = ""
         var rightString = ""
-        
-        if (self.value == nil) {
-            valueString = "nil"
-        } else {
-            valueString = self.value!
-        }
         
         index0String = self.index0!.description
         index1String = self.index1!.description
@@ -48,15 +41,15 @@ class BSNode : NSObject {
         if (self.left == nil) {
             leftString = "left: nil"
         } else {
-            leftString = "left.value: " + self.left!.value!
+            leftString = "left.value: " + self.left!.value
         }
         if (self.right == nil) {
             rightString = "right: nil"
         } else {
-            rightString = "right.value: " + self.right!.value!
+            rightString = "right.value: " + self.right!.value
         }
         
-        let descriptionString = valueString + SEPARATOR_SPACE
+        let descriptionString = value + SEPARATOR_SPACE
             + index0String + SEPARATOR_SPACE
             + index1String + SEPARATOR_SPACE
             + leftString + SEPARATOR_SPACE
