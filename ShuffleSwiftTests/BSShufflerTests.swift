@@ -49,4 +49,15 @@ class BSShufflerTests: XCTestCase {
             BSShuffler.isValidShuffleForEdgeCases("", string0:"a", string1:"b"))
     }
 
+    func testIsValidShuffleForEdgeCasesSourceStringEmpty() {
+        
+        XCTAssertEqual(BSShuffler.BSShuffleValidityCode.Valid,
+            BSShuffler.isValidShuffleForEdgeCases("abc", string0:"abc", string1:""))
+        
+        XCTAssertEqual(BSShuffler.BSShuffleValidityCode.Valid,
+            BSShuffler.isValidShuffleForEdgeCases("abc", string0:"", string1:"abc"))
+        
+        XCTAssertEqual(BSShuffler.BSShuffleValidityCode.NotValid,
+            BSShuffler.isValidShuffleForEdgeCases("abc", string0:"", string1:""))
+    }
 }
