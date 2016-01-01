@@ -16,7 +16,6 @@
 		DEB25CE61C32428A00D6C710 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEB25CE41C32428A00D6C710 /* Main.storyboard */; };
 		DEB25CE81C32428A00D6C710 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEB25CE71C32428A00D6C710 /* Assets.xcassets */; };
 		DEB25CEB1C32428A00D6C710 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEB25CE91C32428A00D6C710 /* LaunchScreen.storyboard */; };
-		DEB25CF61C32428A00D6C710 /* ShuffleSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB25CF51C32428A00D6C710 /* ShuffleSwiftTests.swift */; };
 		DECC2F711C32470B00235F8A /* BSNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECC2F701C32470B00235F8A /* BSNode.swift */; };
 		DECC2F731C324EB800235F8A /* BSNodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECC2F721C324EB800235F8A /* BSNodeTests.swift */; };
 /* End PBXBuildFile section */
@@ -44,7 +43,6 @@
 		DEB25CEA1C32428A00D6C710 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DEB25CEC1C32428A00D6C710 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEB25CF11C32428A00D6C710 /* ShuffleSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShuffleSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DEB25CF51C32428A00D6C710 /* ShuffleSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuffleSwiftTests.swift; sourceTree = "<group>"; };
 		DEB25CF71C32428A00D6C710 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DECC2F701C32470B00235F8A /* BSNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSNode.swift; sourceTree = "<group>"; };
 		DECC2F721C324EB800235F8A /* BSNodeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSNodeTests.swift; sourceTree = "<group>"; };
@@ -105,7 +103,6 @@
 		DEB25CF41C32428A00D6C710 /* ShuffleSwiftTests */ = {
 			isa = PBXGroup;
 			children = (
-				DEB25CF51C32428A00D6C710 /* ShuffleSwiftTests.swift */,
 				DEB25CF71C32428A00D6C710 /* Info.plist */,
 				DECC2F721C324EB800235F8A /* BSNodeTests.swift */,
 				DE02D0F21C363FCA007BA442 /* BSShufflerTests.swift */,
@@ -229,7 +226,6 @@
 			files = (
 				DE02D0F31C363FCA007BA442 /* BSShufflerTests.swift in Sources */,
 				DECC2F731C324EB800235F8A /* BSNodeTests.swift in Sources */,
-				DEB25CF61C32428A00D6C710 /* ShuffleSwiftTests.swift in Sources */,
 				DE57BF051C3648E300159232 /* BSStringUtilsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
