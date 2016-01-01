@@ -120,4 +120,16 @@ class BSShuffler : NSObject {
             return false
         }
     }
+
+    class func isASolution(node: BSNode, shuffledString: String,
+        string0: String, string1: String) -> Bool {
+            
+            if (BSShuffler.isLeafNode(node, string0:string0, string1:string1)
+                && BSShuffler.isNodeValueEqualToValue(node, value:shuffledString)) {
+                    return true
+            } else {
+                return false
+            }
+    }
+
 }
