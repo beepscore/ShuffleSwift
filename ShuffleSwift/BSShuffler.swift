@@ -87,5 +87,37 @@ class BSShuffler : NSObject {
             }
             return BSShuffleValidityCode.Unknown
     }
-    
+
+    class func isLeafNode(node: BSNode, string0: String, string1: String) -> Bool {
+
+        if (BSStringUtils.isStringEmpty(string0)
+        && BSStringUtils.isStringEmpty(string1)) {
+            return true
+        }
+
+        if (BSStringUtils.isStringEmpty(string0)) {
+            if (node.index1 == string1.characters.count - 1) {
+                return true
+            } else {
+                return false
+            }
+        }
+
+        if (BSStringUtils.isStringEmpty(string1)) {
+            if (node.index0 == string0.characters.count - 1) {
+                return true
+            } else {
+                return false
+            }
+        }
+        
+        // string0 and string1 are non-empty
+        
+        if (BSShuffler.isNodeIndex0AtEndOfString(node, string: string0)
+            && BSShuffler.isNodeIndex1AtEndOfString(node, string: string1)) {
+                return true
+        } else {
+            return false
+        }
+    }
 }

@@ -31,6 +31,11 @@ class BSShufflerTests: XCTestCase {
         XCTAssertTrue(BSShuffler.isNodeIndex1AtEndOfString(node, string: "abcd"))
     }
 
+    func testIsLeafNode() {
+        let node = BSNode(value:"a", index0: 0, index1: -1, left: nil, right: nil)
+        XCTAssertFalse(BSShuffler.isLeafNode(node, string0:"a", string1:"b"))
+    }
+
     //==========================================================================
     // MARK: - testIsValidShuffleForEdgeCases
 
