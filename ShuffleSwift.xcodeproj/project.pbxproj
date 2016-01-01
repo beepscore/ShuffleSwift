@@ -34,6 +34,7 @@
 		DE02D0EE1C3634B0007BA442 /* BSShuffler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSShuffler.swift; sourceTree = "<group>"; };
 		DE02D0F01C363A97007BA442 /* BSStringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSStringUtils.swift; sourceTree = "<group>"; };
 		DE02D0F21C363FCA007BA442 /* BSShufflerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSShufflerTests.swift; sourceTree = "<group>"; };
+		DE0BBD9E1C364C0B0001EC9C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DE57BF041C3648E300159232 /* BSStringUtilsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSStringUtilsTests.swift; sourceTree = "<group>"; };
 		DEB25CDD1C32428A00D6C710 /* ShuffleSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShuffleSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEB25CE01C32428A00D6C710 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +70,7 @@
 		DEB25CD41C32428A00D6C710 = {
 			isa = PBXGroup;
 			children = (
+				DE0BBD9E1C364C0B0001EC9C /* README.md */,
 				DEB25CDF1C32428A00D6C710 /* ShuffleSwift */,
 				DEB25CF41C32428A00D6C710 /* ShuffleSwiftTests */,
 				DEB25CDE1C32428A00D6C710 /* Products */,
