@@ -85,4 +85,28 @@ class BSShufflerTests: XCTestCase {
         XCTAssertEqual(nil, rootNode.left)
         XCTAssertEqual(nil, rootNode.right)
     }
+
+    func testShuffledStringStart() {
+        let node = BSNode()
+        let shuffledString = "abc"
+        
+        XCTAssertEqual("", BSShuffler.shuffledStringStart(shuffledString, node: node))
+
+        node.value = "a"
+        XCTAssertEqual(node.value, BSShuffler.shuffledStringStart(shuffledString, node: node))
+
+        node.value = "ab"
+        XCTAssertEqual(node.value, BSShuffler.shuffledStringStart(shuffledString, node: node))
+
+        node.value = "abc"
+        XCTAssertEqual(node.value, BSShuffler.shuffledStringStart(shuffledString, node: node))
+    }
+
+    func testShuffledStringStartNodeValueLongerThanShuffledString() {
+        let node = BSNode()
+        node.value = "abcdefghijk"
+        let shuffledString = "abc"
+        XCTAssertEqual(shuffledString, BSShuffler.shuffledStringStart(shuffledString, node: node))
+    }
+
 }

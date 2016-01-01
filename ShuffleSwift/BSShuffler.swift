@@ -162,5 +162,18 @@ class BSShuffler : NSObject {
         // queue, add to end of array
         queue.append(rootNode)
     }
+
+    /** 
+     * @return start of shuffledString, length equal to node value length
+     * return shuffledString if node value is longer than shuffledString
+     */
+    class func shuffledStringStart(shuffledString: String, node: BSNode) -> String {
+        if (node.value.endIndex > shuffledString.endIndex) {
+            // avoid index out of range
+            return shuffledString
+        } else {
+            return shuffledString.substringToIndex(node.value.endIndex)
+        }
+    }
     
 }
