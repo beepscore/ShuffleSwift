@@ -12,28 +12,45 @@ import XCTest
 class BSShufflerTests: XCTestCase {
     
     func testIsNodeIndex0AtEndOfString() {
-        let node = BSNode(value:"foo", index0: 2, index1: 0, left: nil, right: nil)
-        
-        XCTAssertTrue(BSShuffler.isNodeIndex0AtEndOfString(node, string: "abc"))
-        XCTAssertTrue(BSShuffler.isNodeIndex0AtEndOfString(node, string: ""))
-        
-        XCTAssertFalse(BSShuffler.isNodeIndex0AtEndOfString(node, string: "ab"))
-        XCTAssertFalse(BSShuffler.isNodeIndex0AtEndOfString(node, string: "abcd"))
+        let node = BSNode()
+
+        var string = ""
+        node.index0 = string.endIndex
+        XCTAssertTrue(BSShuffler.isNodeIndex0AtEndOfString(node, string: string))
+
+        string = "abc"
+        node.index0 = string.endIndex
+        XCTAssertTrue(BSShuffler.isNodeIndex0AtEndOfString(node, string: string))
+
+        string = "abc"
+        node.index0 = string.endIndex.predecessor()
+        XCTAssertFalse(BSShuffler.isNodeIndex0AtEndOfString(node, string: string))
     }
     
     func testIsNodeIndex1AtEndOfString() {
-        let node = BSNode(value:"foo", index0: 0, index1: 3, left: nil, right: nil)
-        
-        XCTAssertFalse(BSShuffler.isNodeIndex1AtEndOfString(node, string: "abc"))
-        XCTAssertTrue(BSShuffler.isNodeIndex1AtEndOfString(node, string: ""))
-        
-        XCTAssertFalse(BSShuffler.isNodeIndex1AtEndOfString(node, string: "ab"))
-        XCTAssertTrue(BSShuffler.isNodeIndex1AtEndOfString(node, string: "abcd"))
+        let node = BSNode()
+
+        var string = ""
+        node.index1 = string.endIndex
+        XCTAssertTrue(BSShuffler.isNodeIndex1AtEndOfString(node, string: string))
+
+        string = "abc"
+        node.index1 = string.endIndex
+        XCTAssertTrue(BSShuffler.isNodeIndex1AtEndOfString(node, string: string))
+
+        string = "abc"
+        node.index1 = string.endIndex.predecessor()
+        XCTAssertFalse(BSShuffler.isNodeIndex1AtEndOfString(node, string: string))
     }
 
     func testIsLeafNode() {
-        let node = BSNode(value:"a", index0: 0, index1: -1, left: nil, right: nil)
-        XCTAssertFalse(BSShuffler.isLeafNode(node, string0:"a", string1:"b"))
+        let node = BSNode()
+        let string0 = "moe"
+        let string1 = "curly"
+        node.index0 = string0.endIndex
+        node.index1 = string1.startIndex.advancedBy(1)
+
+        XCTAssertFalse(BSShuffler.isLeafNode(node, string0:string0, string1:string1))
     }
 
     //==========================================================================
@@ -80,8 +97,8 @@ class BSShufflerTests: XCTestCase {
         let rootNode : BSNode = queue.last!
 
         XCTAssertEqual("", rootNode.value)
-        XCTAssertEqual(-1, rootNode.index0)
-        XCTAssertEqual(-1, rootNode.index1)
+        XCTAssertNil(rootNode.index0)
+        XCTAssertNil(rootNode.index1)
         XCTAssertEqual(nil, rootNode.left)
         XCTAssertEqual(nil, rootNode.right)
     }

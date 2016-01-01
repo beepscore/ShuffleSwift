@@ -33,18 +33,26 @@ class BSShuffler : NSObject {
     // MARK: - node index methods
     
     class func isNodeIndex0AtEndOfString(node: BSNode, string: String) -> Bool {
-        return isNodeIndexAtEndOfString(node, index: node.index0!, string: string)
+        if (node.index0 == nil) {
+            return false
+        } else {
+            return isIndexAtEndOfString(node.index0!, string: string)
+        }
     }
     
     class func isNodeIndex1AtEndOfString(node: BSNode, string: String) -> Bool {
-        return isNodeIndexAtEndOfString(node, index: node.index1!, string: string)
+        if (node.index1 == nil) {
+            return false
+        } else {
+            return isIndexAtEndOfString(node.index1!, string: string)
+        }
     }
     
-    class func isNodeIndexAtEndOfString(node: BSNode, index: Int, string: String) -> Bool {
+    class func isIndexAtEndOfString(index: String.Index, string: String) -> Bool {
         if (string == "") {
             return true
         }
-        if (index == string.characters.count - 1) {
+        if (index >= string.endIndex) {
             return true
         } else {
             return false
@@ -103,7 +111,7 @@ class BSShuffler : NSObject {
         }
 
         if (BSStringUtils.isStringEmpty(string0)) {
-            if (node.index1 == string1.characters.count - 1) {
+            if (node.index1 == string1.endIndex) {
                 return true
             } else {
                 return false
@@ -111,7 +119,7 @@ class BSShuffler : NSObject {
         }
 
         if (BSStringUtils.isStringEmpty(string1)) {
-            if (node.index0 == string0.characters.count - 1) {
+            if (node.index0 == string0.endIndex) {
                 return true
             } else {
                 return false
@@ -141,24 +149,19 @@ class BSShuffler : NSObject {
 
     //==========================================================================
     // MARK: -
+
     /**
     * This method has side effect sets self.nodesSearched to empty array.
     * @param queue declared inout so function can mutate it's value
     * caller must use &queue
     */
     func addRootNodeToQueue(inout queue : Array<BSNode>) {
-        // this index value signifies node has no letters from that source
-        // e.g. if node.index0 == -1, node.value contains no letters from string0
-        let indexBeforeSourceStart = -1;
-        
+
         self.nodesSearched = []
         
         // root node has empty value and no letters from either source string
-        let rootNode = BSNode(value: "",
-            index0: indexBeforeSourceStart,
-            index1: indexBeforeSourceStart,
-            left: nil, right: nil)
-        
+        let rootNode = BSNode()
+
         // queue, add to end of array
         queue.append(rootNode)
     }

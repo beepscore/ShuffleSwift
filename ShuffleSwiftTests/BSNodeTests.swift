@@ -24,14 +24,23 @@ class BSNodeTests: XCTestCase {
     func testDefaults() {
         let node = BSNode()
         XCTAssertEqual("", node.value)
-        XCTAssertEqual(0, node.index0)
-        XCTAssertEqual(0, node.index1)
+        XCTAssertNil(node.index0)
+        XCTAssertNil(node.index1)
         XCTAssertEqual(nil, node.left)
         XCTAssertEqual(nil, node.right)
     }
 
     func testConvenienceInitializer() {
         // Setup
+
+        // example strings, arbitrary but chosen to help convey how a shuffle works
+        let string0 = "aceg"
+        let string1 = "bdfh"
+        //let shuffledString = "abcdefgh"
+
+        let index0 = string0.startIndex.advancedBy(4)
+        let index1 = string1.startIndex.advancedBy(2)
+
         // Use default initializer to instantiate child nodes for use as arguments
         let larry = BSNode()
         larry.value = "Larry"
@@ -42,23 +51,35 @@ class BSNodeTests: XCTestCase {
         XCTAssertEqual("Rick", rick.value)
 
         // method under test - convenience initializer
-        let joe = BSNode.init(value: "Joe", index0: 4, index1: 2, left: larry, right: rick)
-        XCTAssertEqual("Joe", joe.value)
-        XCTAssertEqual(4, joe.index0)
-        XCTAssertEqual(2, joe.index1)
+        let joe = BSNode.init(value: "abcde",
+            index0: index0,
+            index1: index1,
+            left: larry, right: rick)
+        
+        XCTAssertEqual("abcde", joe.value)
+        XCTAssertEqual(string0.startIndex.advancedBy(4), joe.index0)
+        XCTAssertEqual(string1.startIndex.advancedBy(2), joe.index1)
         XCTAssertEqual(larry, joe.left)
         XCTAssertEqual(rick, joe.right)
-
     }
 
     func testNodeDescriptionDefaults() {
         let node = BSNode()
-        let expected = ", 0, 0, left: nil, right: nil"
+        let expected = ", left: nil, right: nil"
         XCTAssertEqual(expected, node.description)
     }
 
     func testNodeDescription() {
         // Setup
+
+        // example strings, arbitrary but chosen to help convey how a shuffle works
+        let string0 = "aceg"
+        let string1 = "bdfh"
+        //let shuffledString = "abcdefgh"
+
+        let index0 = string0.startIndex.advancedBy(4)
+        let index1 = string1.startIndex.advancedBy(2)
+
         // Use default initializer to instantiate child nodes for use as arguments
         let larry = BSNode()
         larry.value = "Larry"
@@ -68,8 +89,12 @@ class BSNodeTests: XCTestCase {
         rick.value = "Rick"
         XCTAssertEqual("Rick", rick.value)
 
-        let joe = BSNode.init(value: "Joe", index0: 4, index1: 2, left: larry, right: rick)
-        let expected = "Joe, 4, 2, left.value: Larry, right.value: Rick"
+        let joe = BSNode.init(value: "abcde",
+            index0: index0,
+            index1: index1,
+            left: larry, right: rick)
+
+        let expected = "abcde, left.value: Larry, right.value: Rick"
         XCTAssertEqual(expected, joe.description)
     }
 }
