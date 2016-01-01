@@ -21,5 +21,33 @@ class BSStringUtils : NSObject {
             return false
         }
     }
+
+    /** Method is "safe" in that it avoids out of bounds exceptions
+     * This method may not be as useful for Swift String as it was for Objective C NSString
+     * range from startIndex to endIndex is inclusive.
+     * Inclusive range is like Swift String but unlike NSString substringWithRange.
+     * @param aString
+     * @param endIndex may be in middle, at end, or past end of aString.
+     * @param startIndex
+     * @return substring from startIndex to endIndex inclusive.
+     *         return substring to endIndex if endIndex >= aString.characters.count
+     */
+     // TODO: Consider refactor/rename to more idiomatic Swift.
+     // For example can change parameters from startIndex, endIndex to a range.
+    class func safeSubstringInclusive(aString: String,
+        startIndex: String.CharacterView.Index,
+        endIndex: String.CharacterView.Index) -> String {
+            var substring = ""
+            if (endIndex >= aString.endIndex) {
+                // endIndex is at or past end of aString
+                substring = aString.substringFromIndex(startIndex)
+            } else {
+                var endIndexInclusive = endIndex
+                endIndexInclusive = endIndexInclusive.advancedBy(1)
+                let range = startIndex...endIndexInclusive
+                substring = substring[range]
+            }
+            return substring
+    }
     
 }

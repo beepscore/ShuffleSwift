@@ -69,4 +69,13 @@ class BSStringUtilsTests: XCTestCase {
             testString.substringWithRange(testString.startIndex.successor()..<testString.endIndex.predecessor()))
     }
 
+    func testSafeSubstringInclusiveStartIndexEndIndex () {
+        var testString = ""
+        XCTAssertEqual(testString, BSStringUtils.safeSubstringInclusive("",
+            startIndex:testString.startIndex, endIndex:testString.endIndex))
+
+        testString = "a"
+        XCTAssertEqual(testString, BSStringUtils.safeSubstringInclusive("a",
+            startIndex:testString.startIndex, endIndex:testString.endIndex))
+    }
 }
