@@ -23,6 +23,8 @@ class BSShuffler : NSObject {
         }
         return false
     }
+
+    // MARK: - node index methods
     
     class func isNodeIndex0AtEndOfString(node: BSNode, string: String) -> Bool {
         return isNodeIndexAtEndOfString(node, index: node.index0!, string: string)
@@ -43,7 +45,7 @@ class BSShuffler : NSObject {
         }
     }
 
-    //==========================================================================
+    // MARK: -
 
     /**
     * Checks several edge cases such as arguments empty strings

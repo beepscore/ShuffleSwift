@@ -32,7 +32,7 @@ class BSShufflerTests: XCTestCase {
     }
 
     //==========================================================================
-    // MARK: testIsValidShuffleForEdgeCases
+    // MARK: - testIsValidShuffleForEdgeCases
 
     func testIsValidShuffleForEdgeCasesShuffledStringEmpty() {
         
