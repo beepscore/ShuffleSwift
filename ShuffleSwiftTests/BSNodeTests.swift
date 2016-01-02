@@ -65,7 +65,7 @@ class BSNodeTests: XCTestCase {
 
     func testNodeDescriptionDefaults() {
         let node = BSNode()
-        let expected = ", left: nil, right: nil"
+        let expected = ", nil, nil, left: nil, right: nil"
         XCTAssertEqual(expected, node.description)
     }
 
@@ -94,7 +94,7 @@ class BSNodeTests: XCTestCase {
             index1: index1,
             left: larry, right: rick)
 
-        let expected = "abcde, left.value: Larry, right.value: Rick"
+        let expected = "abcde, 4, 2, left.value: Larry, right.value: Rick"
         XCTAssertEqual(expected, joe.description)
     }
 }

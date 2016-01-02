@@ -46,14 +46,22 @@ class BSNode : NSObject {
     override var description : String {
         
         let SEPARATOR_SPACE = ", "
-//        var index0String = ""
-//        var index1String = ""
+        var index0String = ""
+        var index1String = ""
         var leftString = ""
         var rightString = ""
-        
-        //index0String = self.index0!description
-        //index1String = self.index1!description
-        
+
+        if (self.index0 == nil) {
+            index0String = "nil"
+        } else {
+            index0String = "\(self.index0!)"
+        }
+        if (self.index1 == nil) {
+            index1String = "nil"
+        } else {
+            index1String = "\(self.index1!)"
+        }
+
         if (self.left == nil) {
             leftString = "left: nil"
         } else {
@@ -66,8 +74,8 @@ class BSNode : NSObject {
         }
         
         let descriptionString = value + SEPARATOR_SPACE
-//            + index0String + SEPARATOR_SPACE
-//            + index1String + SEPARATOR_SPACE
+            + index0String + SEPARATOR_SPACE
+            + index1String + SEPARATOR_SPACE
             + leftString + SEPARATOR_SPACE
             + rightString
         
