@@ -156,4 +156,34 @@ class BSShufflerTests: XCTestCase {
         XCTAssertEqual(string0.startIndex, leftNode.index0)
     }
 
+    func testAddRightNodeToNodeAndQueue() {
+        let shuffler = BSShuffler()
+        var queue : Array<BSNode> = []
+
+        //addRootNodeToQueue mutates inout argument queue so must call as &queue
+        shuffler.addRootNodeToQueue(&queue)
+        let rootNode : BSNode = queue.last!
+
+        XCTAssertEqual("", rootNode.value)
+        XCTAssertNil(rootNode.index0)
+        XCTAssertNil(rootNode.index1)
+        XCTAssertEqual(nil, rootNode.left)
+        XCTAssertEqual(nil, rootNode.right)
+
+        let string1 = "abc"
+
+        XCTAssertEqual(1, queue.count)
+
+        //addRightNodeToNodeAndQueue mutates inout argument queue so must call as &queue
+        shuffler.addRightNodeToNodeAndQueue(rootNode, queue: &queue, string1: string1)
+
+        XCTAssertEqual(2, queue.count)
+        XCTAssertEqual(rootNode, queue.first!)
+        let rightNode : BSNode = queue.last!
+        XCTAssertEqual(rightNode, rootNode.right)
+        XCTAssertEqual(nil, rootNode.left)
+        XCTAssertEqual("a", rightNode.value)
+        XCTAssertEqual(string1.startIndex, rightNode.index1)
+    }
+
 }

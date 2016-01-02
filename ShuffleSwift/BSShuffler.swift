@@ -207,4 +207,32 @@ class BSShuffler : NSObject {
         queue.append(node.left!)
     }
 
+    /**
+    * @param queue declared inout so function can mutate it's value
+    * caller must use &queue
+    */
+    func addRightNodeToNodeAndQueue(node: BSNode, inout queue: Array<BSNode>, string1: String) {
+        
+        var nodeRightIndex1 : String.Index;
+
+        if (node.index1 == nil) {
+            nodeRightIndex1 = string1.startIndex
+        } else {
+            nodeRightIndex1 = node.index1!.successor()
+        }
+
+        // get a string of one character
+        let nodeRightNextCharacter = BSStringUtils.safeCharacterFromString(string1, index: nodeRightIndex1)
+
+        // node.value.append() gave error "ambiguous reference to member 'append'"
+        // let nodeRightValue : String = (node.value).append(nodeRightNextCharacter)
+        let nodeRightValue : String = node.value + nodeRightNextCharacter
+        
+        node.right = BSNode(value: nodeRightValue,
+            index0: node.index0, index1: nodeRightIndex1,
+            left: nil, right: nil)
+        
+        queue.append(node.right!)
+    }
+
 }
