@@ -33,7 +33,7 @@ class BSNode : NSObject {
     var right: BSNode? = nil
 
     // https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Initialization.html
-    convenience init(value: String, index0: String.Index, index1: String.Index,
+    convenience init(value: String, index0: String.Index?, index1: String.Index?,
         left: BSNode?, right: BSNode?) {
             self.init()
             self.value = value

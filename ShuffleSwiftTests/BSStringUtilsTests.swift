@@ -53,30 +53,54 @@ class BSStringUtilsTests: XCTestCase {
 
     func testPracticeUsingSwiftSubstringWithRange () {
         var testString = ""
-        XCTAssertEqual(testString,
-            testString.substringWithRange(testString.startIndex..<testString.endIndex))
-
+        var range = testString.startIndex..<testString.endIndex
+        XCTAssertEqual(testString, testString.substringWithRange(range))
+        
         testString = "ab"
-        XCTAssertEqual(testString,
-            testString.substringWithRange(testString.startIndex..<testString.endIndex))
+        range = testString.startIndex..<testString.endIndex
+        XCTAssertEqual(testString, testString.substringWithRange(range))
         
         testString = "abc"
-        XCTAssertEqual(testString,
-            testString.substringWithRange(testString.startIndex..<testString.endIndex))
+        range = testString.startIndex..<testString.endIndex
+        XCTAssertEqual(testString, testString.substringWithRange(range))
 
         testString = "abcd"
-        XCTAssertEqual("bc",
-            testString.substringWithRange(testString.startIndex.successor()..<testString.endIndex.predecessor()))
+        range = testString.startIndex.successor()..<testString.endIndex.predecessor()
+        XCTAssertEqual("bc", testString.substringWithRange(range))
+
+        testString = "abcd"
+        range = testString.startIndex..<testString.startIndex
+        XCTAssertEqual("", testString.substringWithRange(range))
+
+        testString = "abcd"
+        range = testString.startIndex..<testString.startIndex.successor()
+        XCTAssertEqual("a", testString.substringWithRange(range))
+
+        testString = "abcd"
+        range = testString.startIndex.advancedBy(1)..<testString.startIndex.advancedBy(2)
+        XCTAssertEqual("b", testString.substringWithRange(range))
     }
 
     func testSafeSubstringInclusiveStartIndexEndIndex () {
         var testString = ""
-        XCTAssertEqual(testString, BSStringUtils.safeSubstringInclusive("",
+        XCTAssertEqual(testString, BSStringUtils.safeSubstringInclusive(testString,
             startIndex:testString.startIndex, endIndex:testString.endIndex))
 
         testString = "a"
-        XCTAssertEqual(testString, BSStringUtils.safeSubstringInclusive("a",
+        XCTAssertEqual(testString, BSStringUtils.safeSubstringInclusive(testString,
             startIndex:testString.startIndex, endIndex:testString.endIndex))
+
+        testString = "ab"
+        XCTAssertEqual("a", BSStringUtils.safeSubstringInclusive(testString,
+            startIndex:testString.startIndex, endIndex:testString.startIndex))
+
+        testString = "abcd"
+        XCTAssertEqual("a", BSStringUtils.safeSubstringInclusive(testString,
+            startIndex:testString.startIndex, endIndex:testString.startIndex))
+
+        testString = "abcd"
+        XCTAssertEqual("ab", BSStringUtils.safeSubstringInclusive(testString,
+            startIndex:testString.startIndex, endIndex:testString.startIndex.successor()))
     }
 
 }

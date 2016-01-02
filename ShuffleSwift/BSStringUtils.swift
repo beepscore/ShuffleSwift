@@ -42,12 +42,10 @@ class BSStringUtils : NSObject {
                 // endIndex is at or past end of aString
                 substring = aString.substringFromIndex(startIndex)
             } else {
-                var endIndexInclusive = endIndex
-                endIndexInclusive = endIndexInclusive.advancedBy(1)
-                let range = startIndex...endIndexInclusive
-                substring = substring[range]
+                let range = startIndex...endIndex
+                substring = aString[range]
             }
             return substring
     }
-    
+
 }
