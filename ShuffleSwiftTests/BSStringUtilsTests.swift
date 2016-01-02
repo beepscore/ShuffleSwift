@@ -11,6 +11,8 @@ import XCTest
 
 class BSStringUtilsTests: XCTestCase {
 
+    // MARK: - Practice using Swift String methods. Not designed to "test" Apple's code.
+
     func testPracticeUsingSwiftSubstringFromIndex() {
         var testString = ""
         XCTAssertEqual(testString, testString.substringFromIndex(testString.startIndex))
