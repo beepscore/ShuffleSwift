@@ -2,7 +2,7 @@
 Given three strings, write a method to test if shuffledString is a valid "shuffle" of string0 and string1.  
 This app started as Java "ShuffleAndroid".
 Then ported to Objective-C "Shuffle.app".
-Now port to Swift as ShuffleSwift.app".
+Then ported to Swift as ShuffleSwift.app".
 
 # References
 Java ShuffleAndroid by Steve Baker Beepscore LLC  
@@ -10,6 +10,9 @@ Java ShuffleAndroid by Steve Baker Beepscore LLC
 
 Objective C Shuffle by Steve Baker Beepscore LLC  
 <https://github.com/beepscore/Shuffle>
+
+Swift ShuffleSwift by Steve Baker Beepscore LLC  
+<https://github.com/beepscore/ShuffleSwift>
 
 TreeTraverser by Steve Baker Beepscore LLC  
 <https://github.com/beepscore/TreeTraverser>
