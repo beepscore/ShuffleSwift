@@ -11,12 +11,6 @@ import XCTest
 
 class BSStringUtilsTests: XCTestCase {
 
-    func testIsStringEmpty() {
-        XCTAssertTrue(BSStringUtils.isStringEmpty(""));
-        
-        XCTAssertFalse(BSStringUtils.isStringEmpty("B"));
-    }
-
     func testPracticeUsingSwiftSubstringFromIndex() {
         var testString = ""
         XCTAssertEqual(testString, testString.substringFromIndex(testString.startIndex))

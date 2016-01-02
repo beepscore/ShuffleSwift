@@ -10,18 +10,6 @@ import Foundation
 
 class BSStringUtils : NSObject {
 
-    /**
-     *  TODO: Consider deleting this method after app is ported.
-     *  In Swift it is very simple and may not be worthwhile.
-     */
-    class func isStringEmpty(string: String) -> Bool {
-        if (string == "") {
-            return true
-        } else {
-            return false
-        }
-    }
-
     /** Method is "safe" in that it avoids out of bounds exceptions
      * @param string
      * @param index may be nil, at start, in middle, at end, or past end of string.

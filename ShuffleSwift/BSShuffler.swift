@@ -105,12 +105,11 @@ class BSShuffler : NSObject {
 
     class func isLeafNode(node: BSNode, string0: String, string1: String) -> Bool {
 
-        if (BSStringUtils.isStringEmpty(string0)
-        && BSStringUtils.isStringEmpty(string1)) {
+        if ((string0 == "") && (string1 == "")) {
             return true
         }
 
-        if (BSStringUtils.isStringEmpty(string0)) {
+        if (string0 == "") {
             if (node.index1 == string1.endIndex) {
                 return true
             } else {
@@ -118,7 +117,7 @@ class BSShuffler : NSObject {
             }
         }
 
-        if (BSStringUtils.isStringEmpty(string1)) {
+        if (string1 == "") {
             if (node.index0 == string0.endIndex) {
                 return true
             } else {
