@@ -81,30 +81,6 @@ class BSStringUtilsTests: XCTestCase {
         XCTAssertEqual("b", testString.substringWithRange(range))
     }
 
-    // MARK: - testSafeSubstringInclusiveStartIndexEndIndex
-
-    func testSafeSubstringInclusiveStartIndexEndIndex() {
-        var testString = ""
-        XCTAssertEqual(testString, BSStringUtils.safeSubstringInclusive(testString,
-            startIndex:testString.startIndex, endIndex:testString.endIndex))
-
-        testString = "a"
-        XCTAssertEqual(testString, BSStringUtils.safeSubstringInclusive(testString,
-            startIndex:testString.startIndex, endIndex:testString.endIndex))
-
-        testString = "ab"
-        XCTAssertEqual("", BSStringUtils.safeSubstringInclusive(testString,
-            startIndex:testString.startIndex, endIndex:testString.startIndex))
-
-        testString = "abcd"
-        XCTAssertEqual("a", BSStringUtils.safeSubstringInclusive(testString,
-            startIndex:testString.startIndex, endIndex:testString.startIndex.successor()))
-
-        testString = "abcd"
-        XCTAssertEqual("ab", BSStringUtils.safeSubstringInclusive(testString,
-            startIndex:testString.startIndex, endIndex:testString.startIndex.advancedBy(2)))
-    }
-
     // MARK: - testSafeCharacterFromString
 
     func testSafeCharacterFromStringEmpty() {
