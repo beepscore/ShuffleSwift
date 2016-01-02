@@ -115,6 +115,21 @@ class BSShufflerTests: XCTestCase {
         XCTAssertFalse(shuffler.isValidShuffle("abcdefghijkl", string0: "abchgi", string1: "defjkl"))
     }
 
+    func testIsValidShuffleLettersInCommon() {
+        let shuffler = BSShuffler()
+        
+        // string0 and string1 contain letters in common
+        XCTAssertTrue(shuffler.isValidShuffle("abca", string0: "ac", string1: "ba"))
+        XCTAssertTrue(shuffler.isValidShuffle("acbbca", string0: "abc", string1: "cba"))
+        XCTAssertTrue(shuffler.isValidShuffle("abaabza", string0: "aba", string1: "abza"))
+        XCTAssertTrue(shuffler.isValidShuffle("This is a great day indeed!",
+            string0: "T reayde", string1: "hisis a gt da ined!"))
+
+        // expect false because strings are case sensitive
+        XCTAssertFalse(shuffler.isValidShuffle("This is a great day indeed!",
+            string0: "t reayde", string1: "hisis a gt da ined!"))
+    }
+
     //==========================================================================
     // MARK: -
 
