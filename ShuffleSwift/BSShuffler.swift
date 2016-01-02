@@ -146,6 +146,86 @@ class BSShuffler : NSObject {
                 return false
             }
     }
+    
+    //==========================================================================
+    // MARK: -
+    
+    /**
+    *  shuffledString is valid if it can be formed by interleaving
+    *  the characters of string0 and string1 in a way that maintains
+    *  the left to right ordering of the characters from each string.
+    *
+    *  Example:
+    *  true == BSShuffler.isValidShuffle("dabecf",
+    *                           string0:"abc", string1:"def")
+    * Traverses binary tree breadth first.
+    * Uses a queue instead of recursion to reduce risk of call stack overflow.
+    * @param shuffledString a potential shuffle of string0 and string1
+    * @param string0 a source string
+    * @param string1 a source string
+    * @return true if shuffledString is a valid shuffle of string0 and string1
+    * else return false
+    */
+    func isValidShuffle(shuffledString: String,
+        string0: String, string1: String) -> Bool {
+            
+            let shuffleValidityCode = BSShuffler.isValidShuffleForEdgeCases(shuffledString,
+                string0:string0, string1:string1)
+            
+            switch (shuffleValidityCode) {
+            case BSShuffleValidityCode.NotValid:
+                return false
+            case BSShuffleValidityCode.Valid:
+                return true
+            case BSShuffleValidityCode.Unknown:
+                // edge cases could not determine if shuffle is valid, don't return yet
+                break
+            default:
+                break
+            }
+            
+            // TODO: Consider create queue class that wraps Array
+            // to implement strict fifo queue
+            var queue : Array<BSNode> = []
+            
+            self.addRootNodeToQueue(&queue)
+            
+            while (queue.count > 0) {
+                
+                // queue - remove from beginning of array
+                // queue.count > 0 so safe to force unwrap
+                let node = queue.first!
+                queue.removeFirst()
+                
+                self.nodesSearched.append(node.value)
+                
+                if (BSShuffler.isLeafNode(node, string0:string0, string1:string1)) {
+                    // node is a terminal node
+                    if (BSShuffler.isASolution(node,
+                        shuffledString:shuffledString,
+                        string0:string0,
+                        string1:string1)) {
+                            return true
+                    } else {
+                        // skip to next iteration, next node in queue
+                        continue
+                    }
+                }
+                
+                let shuffledStringStart = BSShuffler.shuffledStringStart(shuffledString,
+                    node:node)
+                
+                if (BSShuffler.isNodeValueEqualToValue(node, value:shuffledStringStart)) {
+                    // path to this node is a valid candidate, so add sub-branches
+                    BSShuffler.addLeftNodeToNodeAndQueue(node, queue:&queue, string0:string0)
+                    BSShuffler.addRightNodeToNodeAndQueue(node, queue:&queue, string1:string1)
+                }
+            }
+            
+            // didn't find a solution
+            return false
+            
+    }
 
     //==========================================================================
     // MARK: -
