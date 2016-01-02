@@ -145,7 +145,7 @@ class BSShufflerTests: XCTestCase {
         XCTAssertEqual(1, queue.count)
 
         //addLeftNodeToNodeAndQueue mutates inout argument queue so must call as &queue
-        shuffler.addLeftNodeToNodeAndQueue(rootNode, queue: &queue, string0: string0)
+        BSShuffler.addLeftNodeToNodeAndQueue(rootNode, queue: &queue, string0: string0)
 
         XCTAssertEqual(2, queue.count)
         XCTAssertEqual(rootNode, queue.first!)
@@ -175,7 +175,7 @@ class BSShufflerTests: XCTestCase {
         XCTAssertEqual(1, queue.count)
 
         //addRightNodeToNodeAndQueue mutates inout argument queue so must call as &queue
-        shuffler.addRightNodeToNodeAndQueue(rootNode, queue: &queue, string1: string1)
+        BSShuffler.addRightNodeToNodeAndQueue(rootNode, queue: &queue, string1: string1)
 
         XCTAssertEqual(2, queue.count)
         XCTAssertEqual(rootNode, queue.first!)

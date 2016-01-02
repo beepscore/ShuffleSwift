@@ -183,7 +183,7 @@ class BSShuffler : NSObject {
     * @param queue declared inout so function can mutate it's value
     * caller must use &queue
     */
-    func addLeftNodeToNodeAndQueue(node: BSNode, inout queue: Array<BSNode>, string0: String) {
+    class func addLeftNodeToNodeAndQueue(node: BSNode, inout queue: Array<BSNode>, string0: String) {
         
         var nodeLeftIndex0 : String.Index;
 
@@ -211,7 +211,7 @@ class BSShuffler : NSObject {
     * @param queue declared inout so function can mutate it's value
     * caller must use &queue
     */
-    func addRightNodeToNodeAndQueue(node: BSNode, inout queue: Array<BSNode>, string1: String) {
+    class func addRightNodeToNodeAndQueue(node: BSNode, inout queue: Array<BSNode>, string1: String) {
         
         var nodeRightIndex1 : String.Index;
 
