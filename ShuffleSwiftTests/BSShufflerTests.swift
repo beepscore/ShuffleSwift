@@ -130,6 +130,19 @@ class BSShufflerTests: XCTestCase {
             string0: "t reayde", string1: "hisis a gt da ined!"))
     }
 
+    func testIsValidShuffleUTF8() {
+        let shuffler = BSShuffler()
+        
+        // Chinese from http://www.foxconn.com/index.html
+        XCTAssertTrue(shuffler.isValidShuffle("公告本公司董事會通過104年第一季合併",
+            string0: "公司會0合",
+            string1: "告本公董事通過14年第一季併"))
+        
+        XCTAssertFalse(shuffler.isValidShuffle("公告本公司董事會通過104年第一季合併",
+            string0: "公司0合",
+            string1: "會告本公董事通過14年第一季併"))
+    }
+
     //==========================================================================
     // MARK: -
 
