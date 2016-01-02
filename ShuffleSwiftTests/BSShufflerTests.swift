@@ -105,6 +105,16 @@ class BSShufflerTests: XCTestCase {
         XCTAssertTrue(shuffler.isValidShuffle("abc", string0: "", string1: "abc"))
     }
 
+    func testIsValidShuffle() {
+        let shuffler = BSShuffler()
+
+        XCTAssertTrue(shuffler.isValidShuffle("ab", string0: "a", string1: "b"))
+        XCTAssertFalse(shuffler.isValidShuffle("abc", string0: "a", string1: "b"))
+        XCTAssertTrue(shuffler.isValidShuffle("dabecf", string0: "abc", string1: "def"))
+        XCTAssertTrue(shuffler.isValidShuffle("abcdefghijkl", string0: "abcghi", string1: "defjkl"))
+        XCTAssertFalse(shuffler.isValidShuffle("abcdefghijkl", string0: "abchgi", string1: "defjkl"))
+    }
+
     //==========================================================================
     // MARK: -
 

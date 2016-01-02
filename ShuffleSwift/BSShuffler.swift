@@ -270,7 +270,12 @@ class BSShuffler : NSObject {
         if (node.index0 == nil) {
             nodeLeftIndex0 = string0.startIndex
         } else {
-            nodeLeftIndex0 = node.index0!.successor()
+            if (node.index0! >= string0.endIndex) {
+                // avoid fatal error cannot increment endIndex
+                return
+            } else {
+                nodeLeftIndex0 = node.index0!.successor()
+            }
         }
 
         // get a string of one character
@@ -298,7 +303,12 @@ class BSShuffler : NSObject {
         if (node.index1 == nil) {
             nodeRightIndex1 = string1.startIndex
         } else {
-            nodeRightIndex1 = node.index1!.successor()
+            if (node.index1! >= string1.endIndex) {
+                // avoid fatal error cannot increment endIndex
+                return
+            } else {
+                nodeRightIndex1 = node.index1!.successor()
+            }
         }
 
         // get a string of one character
