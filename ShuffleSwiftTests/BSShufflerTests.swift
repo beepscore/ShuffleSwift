@@ -83,6 +83,31 @@ class BSShufflerTests: XCTestCase {
             BSShuffler.isValidShuffleForEdgeCases("abc", string0:"", string1:""))
     }
 
+    //==========================================================================
+    // MARK: - testIsValidShuffle
+
+    func testIsValidShuffleShuffledStringEmpty() {
+        let shuffler = BSShuffler()
+        
+        XCTAssertTrue(shuffler.isValidShuffle("", string0: "", string1: ""))
+
+        // TODO: Consider changing method to return true for these edge cases
+        XCTAssertFalse(shuffler.isValidShuffle("", string0: "a", string1: ""))
+        XCTAssertFalse(shuffler.isValidShuffle("", string0: "", string1: "xy"))
+        XCTAssertFalse(shuffler.isValidShuffle("", string0: "a", string1: "b"))
+    }
+
+    func testIsValidShuffleSourceStringEmpty() {
+        let shuffler = BSShuffler()
+
+        XCTAssertFalse(shuffler.isValidShuffle("abc", string0: "", string1: ""))
+        XCTAssertTrue(shuffler.isValidShuffle("abc", string0: "abc", string1: ""))
+        XCTAssertTrue(shuffler.isValidShuffle("abc", string0: "", string1: "abc"))
+    }
+
+    //==========================================================================
+    // MARK: -
+
     func testAddRootNodeToQueue() {
 
         let shuffler = BSShuffler()
