@@ -35,17 +35,48 @@ class BSStringUtils : NSObject {
      // TODO: Consider refactor/rename to more idiomatic Swift.
      // For example can change parameters from startIndex, endIndex to a range.
     class func safeSubstringInclusive(aString: String,
-        startIndex: String.CharacterView.Index,
-        endIndex: String.CharacterView.Index) -> String {
-            var substring = ""
-            if (endIndex >= aString.endIndex) {
-                // endIndex is at or past end of aString
-                substring = aString.substringFromIndex(startIndex)
+        startIndex: String.CharacterView.Index?,
+        endIndex: String.CharacterView.Index?) -> String {
+            
+            var safeStartIndex : String.CharacterView.Index
+            var safeEndIndex : String.CharacterView.Index
+            
+            if (startIndex == nil) {
+                safeStartIndex = aString.startIndex
             } else {
-                let range = startIndex...endIndex
-                substring = aString[range]
+                safeStartIndex = startIndex!
             }
+            
+            if ((endIndex == nil)
+                || (endIndex > aString.endIndex)) {
+                    safeEndIndex = aString.endIndex
+            } else {
+                safeEndIndex = endIndex!
+            }
+            
+            let range = safeStartIndex..<safeEndIndex
+            let substring = aString[range]
             return substring
+    }
+
+    /** Method is "safe" in that it avoids out of bounds exceptions
+     * @param string
+     * @param index may be nil, at start, in middle, at end, or past end of string.
+     * @return empty string if index is nil or at endIndex or past end of string.
+     * return first character if index is aString.startIndex
+     * return last character if index is aString.endIndex.predecessor()
+     */
+    class func safeCharacterFromString(string: String,
+        index: String.CharacterView.Index?) -> String {
+            
+            if ((index == nil)
+                || (index >= string.endIndex)) {
+                    return ""
+            }
+            
+            let range = index!..<index!.successor()
+            let characterString = string[range]
+            return characterString
     }
 
 }
