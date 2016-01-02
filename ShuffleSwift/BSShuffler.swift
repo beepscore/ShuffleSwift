@@ -23,13 +23,6 @@ class BSShuffler : NSObject {
      */
     var nodesSearched: Array<String> = []
 
-    class func isNodeValueEqualToValue(node: BSNode, value: String) -> Bool {
-        if (node.value == value) {
-            return true
-        }
-        return false
-    }
-
     // MARK: - node index methods
     
     class func isNodeIndex0AtEndOfString(node: BSNode, string: String) -> Bool {
@@ -139,7 +132,7 @@ class BSShuffler : NSObject {
         string0: String, string1: String) -> Bool {
             
             if (BSShuffler.isLeafNode(node, string0:string0, string1:string1)
-                && BSShuffler.isNodeValueEqualToValue(node, value:shuffledString)) {
+                && (node.value == shuffledString)) {
                     return true
             } else {
                 return false
@@ -214,7 +207,7 @@ class BSShuffler : NSObject {
                 let shuffledStringStart = BSShuffler.shuffledStringStart(shuffledString,
                     node:node)
                 
-                if (BSShuffler.isNodeValueEqualToValue(node, value:shuffledStringStart)) {
+                if (node.value == shuffledStringStart) {
                     // path to this node is a valid candidate, so add sub-branches
                     BSShuffler.addLeftNodeToNodeAndQueue(node, queue:&queue, string0:string0)
                     BSShuffler.addRightNodeToNodeAndQueue(node, queue:&queue, string1:string1)
