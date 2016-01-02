@@ -171,7 +171,9 @@ class BSShuffler : NSObject {
             
             let shuffleValidityCode = BSShuffler.isValidShuffleForEdgeCases(shuffledString,
                 string0:string0, string1:string1)
-            
+
+            // Swift switch cases do not "fall through", unlike Objective C which needs break
+            // https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/ControlFlow.html
             switch (shuffleValidityCode) {
             case BSShuffleValidityCode.NotValid:
                 return false
@@ -179,8 +181,6 @@ class BSShuffler : NSObject {
                 return true
             case BSShuffleValidityCode.Unknown:
                 // edge cases could not determine if shuffle is valid, don't return yet
-                break
-            default:
                 break
             }
             
