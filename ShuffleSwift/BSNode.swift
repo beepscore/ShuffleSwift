@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BSNode : NSObject {
+class BSNode: NSObject {
 
     /** The partial shuffledString obtained by descending the node tree,
      * drawing the next matching available character from string0 or string1 at each step.
@@ -43,7 +43,7 @@ class BSNode : NSObject {
             self.right = right
     }
 
-    override var description : String {
+    override var description: String {
         
         let SEPARATOR_SPACE = ", "
         var index0String = ""

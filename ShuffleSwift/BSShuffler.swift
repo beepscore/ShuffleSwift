@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BSShuffler : NSObject {
+class BSShuffler: NSObject {
 
     // https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Enumerations.html
     enum BSShuffleValidityCode {
@@ -257,7 +257,7 @@ class BSShuffler : NSObject {
     */
     class func addLeftNodeToNodeAndQueue(node: BSNode, inout queue: [BSNode], string0: String) {
         
-        var nodeLeftIndex0 : String.Index;
+        var nodeLeftIndex0: String.Index;
 
         if (node.index0 == nil) {
             nodeLeftIndex0 = string0.startIndex
@@ -274,8 +274,8 @@ class BSShuffler : NSObject {
         let nodeLeftNextCharacter = BSStringUtils.safeCharacterFromString(string0, index: nodeLeftIndex0)
 
         // node.value.append() gave error "ambiguous reference to member 'append'"
-        // let nodeLeftValue : String = (node.value).append(nodeLeftNextCharacter)
-        let nodeLeftValue : String = node.value + nodeLeftNextCharacter
+        // let nodeLeftValue: String = (node.value).append(nodeLeftNextCharacter)
+        let nodeLeftValue: String = node.value + nodeLeftNextCharacter
         
         node.left = BSNode(value: nodeLeftValue,
             index0: nodeLeftIndex0, index1: node.index1,
@@ -290,7 +290,7 @@ class BSShuffler : NSObject {
     */
     class func addRightNodeToNodeAndQueue(node: BSNode, inout queue: [BSNode], string1: String) {
         
-        var nodeRightIndex1 : String.Index;
+        var nodeRightIndex1: String.Index;
 
         if (node.index1 == nil) {
             nodeRightIndex1 = string1.startIndex
@@ -307,8 +307,8 @@ class BSShuffler : NSObject {
         let nodeRightNextCharacter = BSStringUtils.safeCharacterFromString(string1, index: nodeRightIndex1)
 
         // node.value.append() gave error "ambiguous reference to member 'append'"
-        // let nodeRightValue : String = (node.value).append(nodeRightNextCharacter)
-        let nodeRightValue : String = node.value + nodeRightNextCharacter
+        // let nodeRightValue: String = (node.value).append(nodeRightNextCharacter)
+        let nodeRightValue: String = node.value + nodeRightNextCharacter
         
         node.right = BSNode(value: nodeRightValue,
             index0: node.index0, index1: nodeRightIndex1,

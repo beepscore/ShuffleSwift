@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BSStringUtils : NSObject {
+class BSStringUtils: NSObject {
 
     /** Method is "safe" in that it avoids out of bounds exceptions
      * @param string
