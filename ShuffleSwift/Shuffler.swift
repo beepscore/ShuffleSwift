@@ -1,5 +1,5 @@
 //
-//  BSShuffler.swift
+//  Shuffler.swift
 //  ShuffleSwift
 //
 //  Created by Steve Baker on 12/31/15.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BSShuffler: NSObject {
+class Shuffler: NSObject {
 
     // https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Enumerations.html
     enum BSShuffleValidityCode {
@@ -120,8 +120,8 @@ class BSShuffler: NSObject {
         
         // string0 and string1 are non-empty
         
-        if (BSShuffler.isNodeIndex0AtEndOfString(node, string: string0)
-            && BSShuffler.isNodeIndex1AtEndOfString(node, string: string1)) {
+        if (Shuffler.isNodeIndex0AtEndOfString(node, string: string0)
+            && Shuffler.isNodeIndex1AtEndOfString(node, string: string1)) {
                 return true
         } else {
             return false
@@ -131,7 +131,7 @@ class BSShuffler: NSObject {
     class func isASolution(node: Node, shuffledString: String,
         string0: String, string1: String) -> Bool {
             
-            if (BSShuffler.isLeafNode(node, string0:string0, string1:string1)
+            if (Shuffler.isLeafNode(node, string0:string0, string1:string1)
                 && (node.value == shuffledString)) {
                     return true
             } else {
@@ -148,7 +148,7 @@ class BSShuffler: NSObject {
     *  the left to right ordering of the characters from each string.
     *
     *  Example:
-    *  true == BSShuffler.isValidShuffle("dabecf",
+    *  true == Shuffler.isValidShuffle("dabecf",
     *                           string0:"abc", string1:"def")
     * Traverses binary tree breadth first.
     * Uses a queue instead of recursion to reduce risk of call stack overflow.
@@ -161,7 +161,7 @@ class BSShuffler: NSObject {
     func isValidShuffle(shuffledString: String,
         string0: String, string1: String) -> Bool {
             
-            let shuffleValidityCode = BSShuffler.isValidShuffleForEdgeCases(shuffledString,
+            let shuffleValidityCode = Shuffler.isValidShuffleForEdgeCases(shuffledString,
                 string0:string0, string1:string1)
 
             // Swift switch cases do not "fall through", unlike Objective C which needs break
@@ -191,9 +191,9 @@ class BSShuffler: NSObject {
                 
                 self.nodesSearched.append(node.value)
                 
-                if (BSShuffler.isLeafNode(node, string0:string0, string1:string1)) {
+                if (Shuffler.isLeafNode(node, string0:string0, string1:string1)) {
                     // node is a terminal node
-                    if (BSShuffler.isASolution(node,
+                    if (Shuffler.isASolution(node,
                         shuffledString:shuffledString,
                         string0:string0,
                         string1:string1)) {
@@ -204,13 +204,13 @@ class BSShuffler: NSObject {
                     }
                 }
                 
-                let shuffledStringStart = BSShuffler.shuffledStringStart(shuffledString,
+                let shuffledStringStart = Shuffler.shuffledStringStart(shuffledString,
                     node:node)
                 
                 if (node.value == shuffledStringStart) {
                     // path to this node is a valid candidate, so add sub-branches
-                    BSShuffler.addLeftNodeToNodeAndQueue(node, queue:&queue, string0:string0)
-                    BSShuffler.addRightNodeToNodeAndQueue(node, queue:&queue, string1:string1)
+                    Shuffler.addLeftNodeToNodeAndQueue(node, queue:&queue, string0:string0)
+                    Shuffler.addRightNodeToNodeAndQueue(node, queue:&queue, string1:string1)
                 }
             }
             
