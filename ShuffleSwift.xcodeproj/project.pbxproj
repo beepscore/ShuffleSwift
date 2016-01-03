@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		DE02D0EF1C3634B0007BA442 /* Shuffler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE02D0EE1C3634B0007BA442 /* Shuffler.swift */; };
-		DE02D0F11C363A97007BA442 /* BSStringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE02D0F01C363A97007BA442 /* BSStringUtils.swift */; };
+		DE02D0F11C363A97007BA442 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE02D0F01C363A97007BA442 /* StringUtils.swift */; };
 		DE02D0F31C363FCA007BA442 /* ShufflerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE02D0F21C363FCA007BA442 /* ShufflerTests.swift */; };
 		DE3D3C5D1C372AC8003F44FA /* String+Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3D3C5C1C372AC8003F44FA /* String+Range.swift */; };
-		DE57BF051C3648E300159232 /* BSStringUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57BF041C3648E300159232 /* BSStringUtilsTests.swift */; };
+		DE57BF051C3648E300159232 /* StringUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57BF041C3648E300159232 /* StringUtilsTests.swift */; };
 		DEB25CE11C32428A00D6C710 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB25CE01C32428A00D6C710 /* AppDelegate.swift */; };
 		DEB25CE31C32428A00D6C710 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB25CE21C32428A00D6C710 /* ViewController.swift */; };
 		DEB25CE61C32428A00D6C710 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEB25CE41C32428A00D6C710 /* Main.storyboard */; };
@@ -33,12 +33,12 @@
 
 /* Begin PBXFileReference section */
 		DE02D0EE1C3634B0007BA442 /* Shuffler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shuffler.swift; sourceTree = "<group>"; };
-		DE02D0F01C363A97007BA442 /* BSStringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSStringUtils.swift; sourceTree = "<group>"; };
+		DE02D0F01C363A97007BA442 /* StringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
 		DE02D0F21C363FCA007BA442 /* ShufflerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShufflerTests.swift; sourceTree = "<group>"; };
 		DE0BBD9E1C364C0B0001EC9C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DE24B9B61C364DD400A0B16D /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		DE3D3C5C1C372AC8003F44FA /* String+Range.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Range.swift"; sourceTree = "<group>"; };
-		DE57BF041C3648E300159232 /* BSStringUtilsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSStringUtilsTests.swift; sourceTree = "<group>"; };
+		DE57BF041C3648E300159232 /* StringUtilsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtilsTests.swift; sourceTree = "<group>"; };
 		DEB25CDD1C32428A00D6C710 /* ShuffleSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShuffleSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEB25CE01C32428A00D6C710 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEB25CE21C32428A00D6C710 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 				DECC2F701C32470B00235F8A /* Node.swift */,
 				DE02D0EE1C3634B0007BA442 /* Shuffler.swift */,
 				DE3D3C5C1C372AC8003F44FA /* String+Range.swift */,
-				DE02D0F01C363A97007BA442 /* BSStringUtils.swift */,
+				DE02D0F01C363A97007BA442 /* StringUtils.swift */,
 			);
 			path = ShuffleSwift;
 			sourceTree = "<group>";
@@ -113,7 +113,7 @@
 				DEB25CF71C32428A00D6C710 /* Info.plist */,
 				DECC2F721C324EB800235F8A /* NodeTests.swift */,
 				DE02D0F21C363FCA007BA442 /* ShufflerTests.swift */,
-				DE57BF041C3648E300159232 /* BSStringUtilsTests.swift */,
+				DE57BF041C3648E300159232 /* StringUtilsTests.swift */,
 			);
 			path = ShuffleSwiftTests;
 			sourceTree = "<group>";
@@ -220,7 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEB25CE31C32428A00D6C710 /* ViewController.swift in Sources */,
-				DE02D0F11C363A97007BA442 /* BSStringUtils.swift in Sources */,
+				DE02D0F11C363A97007BA442 /* StringUtils.swift in Sources */,
 				DEB25CE11C32428A00D6C710 /* AppDelegate.swift in Sources */,
 				DECC2F711C32470B00235F8A /* Node.swift in Sources */,
 				DE3D3C5D1C372AC8003F44FA /* String+Range.swift in Sources */,
@@ -234,7 +234,7 @@
 			files = (
 				DE02D0F31C363FCA007BA442 /* ShufflerTests.swift in Sources */,
 				DECC2F731C324EB800235F8A /* NodeTests.swift in Sources */,
-				DE57BF051C3648E300159232 /* BSStringUtilsTests.swift in Sources */,
+				DE57BF051C3648E300159232 /* StringUtilsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

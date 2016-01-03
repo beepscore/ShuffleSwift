@@ -1,5 +1,5 @@
 //
-//  BSStringUtilsTests.swift
+//  StringUtilsTests.swift
 //  ShuffleSwift
 //
 //  Created by Steve Baker on 12/31/15.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import ShuffleSwift
 
-class BSStringUtilsTests: XCTestCase {
+class StringUtilsTests: XCTestCase {
 
     // MARK: - Practice using Swift String methods. Not designed to "test" Apple's code.
 
@@ -82,30 +82,30 @@ class BSStringUtilsTests: XCTestCase {
     func testSafeCharacterFromStringEmpty() {
         let testString = ""
         XCTAssertEqual(testString,
-            BSStringUtils.safeCharacterFromString(testString, index:testString.startIndex))
+            StringUtils.safeCharacterFromString(testString, index:testString.startIndex))
     }
 
     func testSafeCharacterFromStringIndexNil() {
         XCTAssertEqual("",
-            BSStringUtils.safeCharacterFromString("abcd", index:nil))
+            StringUtils.safeCharacterFromString("abcd", index:nil))
     }
 
     func testSafeCharacterFromString() {
         var testString = "abcd"
         XCTAssertEqual("a",
-            BSStringUtils.safeCharacterFromString(testString, index:testString.startIndex))
+            StringUtils.safeCharacterFromString(testString, index:testString.startIndex))
 
         testString = "abcd"
         XCTAssertEqual("b",
-            BSStringUtils.safeCharacterFromString(testString, index:testString.startIndex.successor()))
+            StringUtils.safeCharacterFromString(testString, index:testString.startIndex.successor()))
 
         testString = "abcd"
         XCTAssertEqual("d",
-            BSStringUtils.safeCharacterFromString(testString, index:testString.endIndex.predecessor()))
+            StringUtils.safeCharacterFromString(testString, index:testString.endIndex.predecessor()))
 
         testString = "abcd"
         XCTAssertEqual("",
-            BSStringUtils.safeCharacterFromString(testString, index:testString.endIndex))
+            StringUtils.safeCharacterFromString(testString, index:testString.endIndex))
     }
 
 }

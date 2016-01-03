@@ -271,7 +271,7 @@ class Shuffler: NSObject {
         }
 
         // get a string of one character
-        let nodeLeftNextCharacter = BSStringUtils.safeCharacterFromString(string0, index: nodeLeftIndex0)
+        let nodeLeftNextCharacter = StringUtils.safeCharacterFromString(string0, index: nodeLeftIndex0)
 
         // node.value.append() gave error "ambiguous reference to member 'append'"
         // let nodeLeftValue: String = (node.value).append(nodeLeftNextCharacter)
@@ -304,7 +304,7 @@ class Shuffler: NSObject {
         }
 
         // get a string of one character
-        let nodeRightNextCharacter = BSStringUtils.safeCharacterFromString(string1, index: nodeRightIndex1)
+        let nodeRightNextCharacter = StringUtils.safeCharacterFromString(string1, index: nodeRightIndex1)
 
         // node.value.append() gave error "ambiguous reference to member 'append'"
         // let nodeRightValue: String = (node.value).append(nodeRightNextCharacter)

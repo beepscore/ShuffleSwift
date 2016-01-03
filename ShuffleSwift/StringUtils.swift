@@ -1,5 +1,5 @@
 //
-//  BSStringUtils.swift
+//  StringUtils.swift
 //  ShuffleSwift
 //
 //  Created by Steve Baker on 12/31/15.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BSStringUtils: NSObject {
+class StringUtils: NSObject {
 
     /** Method is "safe" in that it avoids out of bounds exceptions
      * @param string
