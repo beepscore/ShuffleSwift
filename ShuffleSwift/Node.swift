@@ -1,5 +1,5 @@
 //
-//  BSNode.swift
+//  Node.swift
 //  ShuffleSwift
 //
 //  Created by Steve Baker on 12/28/15.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BSNode: NSObject {
+class Node: NSObject {
 
     /** The partial shuffledString obtained by descending the node tree,
      * drawing the next matching available character from string0 or string1 at each step.
@@ -29,12 +29,12 @@ class BSNode: NSObject {
      */
     var index1: String.Index? = nil
 
-    var left: BSNode? = nil
-    var right: BSNode? = nil
+    var left: Node? = nil
+    var right: Node? = nil
 
     // https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Initialization.html
     convenience init(value: String, index0: String.Index?, index1: String.Index?,
-        left: BSNode?, right: BSNode?) {
+        left: Node?, right: Node?) {
             self.init()
             self.value = value
             self.index0 = index0

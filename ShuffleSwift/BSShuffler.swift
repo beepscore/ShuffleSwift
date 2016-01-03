@@ -25,7 +25,7 @@ class BSShuffler: NSObject {
 
     // MARK: - node index methods
     
-    class func isNodeIndex0AtEndOfString(node: BSNode, string: String) -> Bool {
+    class func isNodeIndex0AtEndOfString(node: Node, string: String) -> Bool {
         if (node.index0 == nil) {
             return false
         } else {
@@ -33,7 +33,7 @@ class BSShuffler: NSObject {
         }
     }
     
-    class func isNodeIndex1AtEndOfString(node: BSNode, string: String) -> Bool {
+    class func isNodeIndex1AtEndOfString(node: Node, string: String) -> Bool {
         if (node.index1 == nil) {
             return false
         } else {
@@ -96,7 +96,7 @@ class BSShuffler: NSObject {
             return BSShuffleValidityCode.Unknown
     }
 
-    class func isLeafNode(node: BSNode, string0: String, string1: String) -> Bool {
+    class func isLeafNode(node: Node, string0: String, string1: String) -> Bool {
 
         if ((string0 == "") && (string1 == "")) {
             return true
@@ -128,7 +128,7 @@ class BSShuffler: NSObject {
         }
     }
 
-    class func isASolution(node: BSNode, shuffledString: String,
+    class func isASolution(node: Node, shuffledString: String,
         string0: String, string1: String) -> Bool {
             
             if (BSShuffler.isLeafNode(node, string0:string0, string1:string1)
@@ -178,7 +178,7 @@ class BSShuffler: NSObject {
             
             // TODO: Consider create queue class that wraps Array
             // to implement strict fifo queue
-            var queue: [BSNode] = []
+            var queue: [Node] = []
             
             self.addRootNodeToQueue(&queue)
             
@@ -227,12 +227,12 @@ class BSShuffler: NSObject {
     * @param queue declared inout so function can mutate it's value
     * caller must use &queue
     */
-    func addRootNodeToQueue(inout queue: [BSNode]) {
+    func addRootNodeToQueue(inout queue: [Node]) {
 
         self.nodesSearched = []
         
         // root node has empty value and no letters from either source string
-        let rootNode = BSNode()
+        let rootNode = Node()
 
         // queue, add to end of array
         queue.append(rootNode)
@@ -242,7 +242,7 @@ class BSShuffler: NSObject {
      * @return start of shuffledString, length equal to node value length
      * return shuffledString if node value is longer than shuffledString
      */
-    class func shuffledStringStart(shuffledString: String, node: BSNode) -> String {
+    class func shuffledStringStart(shuffledString: String, node: Node) -> String {
         if (node.value.endIndex > shuffledString.endIndex) {
             // avoid index out of range
             return shuffledString
@@ -255,7 +255,7 @@ class BSShuffler: NSObject {
     * @param queue declared inout so function can mutate it's value
     * caller must use &queue
     */
-    class func addLeftNodeToNodeAndQueue(node: BSNode, inout queue: [BSNode], string0: String) {
+    class func addLeftNodeToNodeAndQueue(node: Node, inout queue: [Node], string0: String) {
         
         var nodeLeftIndex0: String.Index;
 
@@ -277,7 +277,7 @@ class BSShuffler: NSObject {
         // let nodeLeftValue: String = (node.value).append(nodeLeftNextCharacter)
         let nodeLeftValue: String = node.value + nodeLeftNextCharacter
         
-        node.left = BSNode(value: nodeLeftValue,
+        node.left = Node(value: nodeLeftValue,
             index0: nodeLeftIndex0, index1: node.index1,
             left: nil, right: nil)
         
@@ -288,7 +288,7 @@ class BSShuffler: NSObject {
     * @param queue declared inout so function can mutate it's value
     * caller must use &queue
     */
-    class func addRightNodeToNodeAndQueue(node: BSNode, inout queue: [BSNode], string1: String) {
+    class func addRightNodeToNodeAndQueue(node: Node, inout queue: [Node], string1: String) {
         
         var nodeRightIndex1: String.Index;
 
@@ -310,7 +310,7 @@ class BSShuffler: NSObject {
         // let nodeRightValue: String = (node.value).append(nodeRightNextCharacter)
         let nodeRightValue: String = node.value + nodeRightNextCharacter
         
-        node.right = BSNode(value: nodeRightValue,
+        node.right = Node(value: nodeRightValue,
             index0: node.index0, index1: nodeRightIndex1,
             left: nil, right: nil)
         

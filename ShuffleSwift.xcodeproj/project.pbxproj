@@ -17,8 +17,8 @@
 		DEB25CE61C32428A00D6C710 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEB25CE41C32428A00D6C710 /* Main.storyboard */; };
 		DEB25CE81C32428A00D6C710 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEB25CE71C32428A00D6C710 /* Assets.xcassets */; };
 		DEB25CEB1C32428A00D6C710 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEB25CE91C32428A00D6C710 /* LaunchScreen.storyboard */; };
-		DECC2F711C32470B00235F8A /* BSNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECC2F701C32470B00235F8A /* BSNode.swift */; };
-		DECC2F731C324EB800235F8A /* BSNodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECC2F721C324EB800235F8A /* BSNodeTests.swift */; };
+		DECC2F711C32470B00235F8A /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECC2F701C32470B00235F8A /* Node.swift */; };
+		DECC2F731C324EB800235F8A /* NodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECC2F721C324EB800235F8A /* NodeTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,8 +48,8 @@
 		DEB25CEC1C32428A00D6C710 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEB25CF11C32428A00D6C710 /* ShuffleSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShuffleSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEB25CF71C32428A00D6C710 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DECC2F701C32470B00235F8A /* BSNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSNode.swift; sourceTree = "<group>"; };
-		DECC2F721C324EB800235F8A /* BSNodeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSNodeTests.swift; sourceTree = "<group>"; };
+		DECC2F701C32470B00235F8A /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		DECC2F721C324EB800235F8A /* NodeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +99,7 @@
 				DEB25CE71C32428A00D6C710 /* Assets.xcassets */,
 				DEB25CE91C32428A00D6C710 /* LaunchScreen.storyboard */,
 				DEB25CEC1C32428A00D6C710 /* Info.plist */,
-				DECC2F701C32470B00235F8A /* BSNode.swift */,
+				DECC2F701C32470B00235F8A /* Node.swift */,
 				DE02D0EE1C3634B0007BA442 /* BSShuffler.swift */,
 				DE3D3C5C1C372AC8003F44FA /* String+Range.swift */,
 				DE02D0F01C363A97007BA442 /* BSStringUtils.swift */,
@@ -111,7 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				DEB25CF71C32428A00D6C710 /* Info.plist */,
-				DECC2F721C324EB800235F8A /* BSNodeTests.swift */,
+				DECC2F721C324EB800235F8A /* NodeTests.swift */,
 				DE02D0F21C363FCA007BA442 /* BSShufflerTests.swift */,
 				DE57BF041C3648E300159232 /* BSStringUtilsTests.swift */,
 			);
@@ -222,7 +222,7 @@
 				DEB25CE31C32428A00D6C710 /* ViewController.swift in Sources */,
 				DE02D0F11C363A97007BA442 /* BSStringUtils.swift in Sources */,
 				DEB25CE11C32428A00D6C710 /* AppDelegate.swift in Sources */,
-				DECC2F711C32470B00235F8A /* BSNode.swift in Sources */,
+				DECC2F711C32470B00235F8A /* Node.swift in Sources */,
 				DE3D3C5D1C372AC8003F44FA /* String+Range.swift in Sources */,
 				DE02D0EF1C3634B0007BA442 /* BSShuffler.swift in Sources */,
 			);
@@ -233,7 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE02D0F31C363FCA007BA442 /* BSShufflerTests.swift in Sources */,
-				DECC2F731C324EB800235F8A /* BSNodeTests.swift in Sources */,
+				DECC2F731C324EB800235F8A /* NodeTests.swift in Sources */,
 				DE57BF051C3648E300159232 /* BSStringUtilsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

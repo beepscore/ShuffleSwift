@@ -12,7 +12,7 @@ import XCTest
 class BSShufflerTests: XCTestCase {
     
     func testIsNodeIndex0AtEndOfString() {
-        let node = BSNode()
+        let node = Node()
 
         var string = ""
         node.index0 = string.endIndex
@@ -28,7 +28,7 @@ class BSShufflerTests: XCTestCase {
     }
     
     func testIsNodeIndex1AtEndOfString() {
-        let node = BSNode()
+        let node = Node()
 
         var string = ""
         node.index1 = string.endIndex
@@ -44,7 +44,7 @@ class BSShufflerTests: XCTestCase {
     }
 
     func testIsLeafNode() {
-        let node = BSNode()
+        let node = Node()
         let string0 = "moe"
         let string1 = "curly"
         node.index0 = string0.endIndex
@@ -149,7 +149,7 @@ class BSShufflerTests: XCTestCase {
     func testAddRootNodeToQueue() {
 
         let shuffler = BSShuffler()
-        var queue: [BSNode] = []
+        var queue: [Node] = []
 
         XCTAssertEqual(0, queue.count)
 
@@ -157,7 +157,7 @@ class BSShufflerTests: XCTestCase {
         shuffler.addRootNodeToQueue(&queue)
         XCTAssertEqual(1, queue.count)
 
-        let rootNode: BSNode = queue.last!
+        let rootNode: Node = queue.last!
 
         XCTAssertEqual("", rootNode.value)
         XCTAssertNil(rootNode.index0)
@@ -167,7 +167,7 @@ class BSShufflerTests: XCTestCase {
     }
 
     func testShuffledStringStart() {
-        let node = BSNode()
+        let node = Node()
         let shuffledString = "abc"
         
         XCTAssertEqual("", BSShuffler.shuffledStringStart(shuffledString, node: node))
@@ -183,7 +183,7 @@ class BSShufflerTests: XCTestCase {
     }
 
     func testShuffledStringStartNodeValueLongerThanShuffledString() {
-        let node = BSNode()
+        let node = Node()
         node.value = "abcdefghijk"
         let shuffledString = "abc"
         XCTAssertEqual(shuffledString, BSShuffler.shuffledStringStart(shuffledString, node: node))
@@ -191,11 +191,11 @@ class BSShufflerTests: XCTestCase {
 
     func testAddLeftNodeToNodeAndQueue() {
         let shuffler = BSShuffler()
-        var queue: [BSNode] = []
+        var queue: [Node] = []
 
         //addRootNodeToQueue mutates inout argument queue so must call as &queue
         shuffler.addRootNodeToQueue(&queue)
-        let rootNode: BSNode = queue.last!
+        let rootNode: Node = queue.last!
 
         XCTAssertEqual("", rootNode.value)
         XCTAssertNil(rootNode.index0)
@@ -212,7 +212,7 @@ class BSShufflerTests: XCTestCase {
 
         XCTAssertEqual(2, queue.count)
         XCTAssertEqual(rootNode, queue.first!)
-        let leftNode: BSNode = queue.last!
+        let leftNode: Node = queue.last!
         XCTAssertEqual(leftNode, rootNode.left)
         XCTAssertEqual(nil, rootNode.right)
         XCTAssertEqual("a", leftNode.value)
@@ -221,11 +221,11 @@ class BSShufflerTests: XCTestCase {
 
     func testAddRightNodeToNodeAndQueue() {
         let shuffler = BSShuffler()
-        var queue: [BSNode] = []
+        var queue: [Node] = []
 
         //addRootNodeToQueue mutates inout argument queue so must call as &queue
         shuffler.addRootNodeToQueue(&queue)
-        let rootNode: BSNode = queue.last!
+        let rootNode: Node = queue.last!
 
         XCTAssertEqual("", rootNode.value)
         XCTAssertNil(rootNode.index0)
@@ -242,7 +242,7 @@ class BSShufflerTests: XCTestCase {
 
         XCTAssertEqual(2, queue.count)
         XCTAssertEqual(rootNode, queue.first!)
-        let rightNode: BSNode = queue.last!
+        let rightNode: Node = queue.last!
         XCTAssertEqual(rightNode, rootNode.right)
         XCTAssertEqual(nil, rootNode.left)
         XCTAssertEqual("a", rightNode.value)

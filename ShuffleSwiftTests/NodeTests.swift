@@ -1,5 +1,5 @@
 //
-//  BSNodeTests.swift
+//  NodeTests.swift
 //  ShuffleSwift
 //
 //  Created by Steve Baker on 12/28/15.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import ShuffleSwift
 
-class BSNodeTests: XCTestCase {
+class NodeTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
@@ -22,7 +22,7 @@ class BSNodeTests: XCTestCase {
     }
 
     func testDefaults() {
-        let node = BSNode()
+        let node = Node()
         XCTAssertEqual("", node.value)
         XCTAssertNil(node.index0)
         XCTAssertNil(node.index1)
@@ -42,16 +42,16 @@ class BSNodeTests: XCTestCase {
         let index1 = string1.startIndex.advancedBy(2)
 
         // Use default initializer to instantiate child nodes for use as arguments
-        let larry = BSNode()
+        let larry = Node()
         larry.value = "Larry"
         XCTAssertEqual("Larry", larry.value)
 
-        let rick = BSNode()
+        let rick = Node()
         rick.value = "Rick"
         XCTAssertEqual("Rick", rick.value)
 
         // method under test - convenience initializer
-        let joe = BSNode.init(value: "abcde",
+        let joe = Node.init(value: "abcde",
             index0: index0,
             index1: index1,
             left: larry, right: rick)
@@ -64,7 +64,7 @@ class BSNodeTests: XCTestCase {
     }
 
     func testNodeDescriptionDefaults() {
-        let node = BSNode()
+        let node = Node()
         let expected = ", nil, nil, left: nil, right: nil"
         XCTAssertEqual(expected, node.description)
     }
@@ -81,15 +81,15 @@ class BSNodeTests: XCTestCase {
         let index1 = string1.startIndex.advancedBy(2)
 
         // Use default initializer to instantiate child nodes for use as arguments
-        let larry = BSNode()
+        let larry = Node()
         larry.value = "Larry"
         XCTAssertEqual("Larry", larry.value)
 
-        let rick = BSNode()
+        let rick = Node()
         rick.value = "Rick"
         XCTAssertEqual("Rick", rick.value)
 
-        let joe = BSNode.init(value: "abcde",
+        let joe = Node.init(value: "abcde",
             index0: index0,
             index1: index1,
             left: larry, right: rick)
