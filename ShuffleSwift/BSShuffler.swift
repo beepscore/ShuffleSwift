@@ -21,7 +21,7 @@ class BSShuffler : NSObject {
      *  Note node values are not guaranteed to be unique.
      *  Useful during development for examining traversal history.
      */
-    var nodesSearched: Array<String> = []
+    var nodesSearched: [String] = []
 
     // MARK: - node index methods
     
@@ -178,7 +178,7 @@ class BSShuffler : NSObject {
             
             // TODO: Consider create queue class that wraps Array
             // to implement strict fifo queue
-            var queue : Array<BSNode> = []
+            var queue: [BSNode] = []
             
             self.addRootNodeToQueue(&queue)
             
@@ -227,7 +227,7 @@ class BSShuffler : NSObject {
     * @param queue declared inout so function can mutate it's value
     * caller must use &queue
     */
-    func addRootNodeToQueue(inout queue : Array<BSNode>) {
+    func addRootNodeToQueue(inout queue: [BSNode]) {
 
         self.nodesSearched = []
         
@@ -255,7 +255,7 @@ class BSShuffler : NSObject {
     * @param queue declared inout so function can mutate it's value
     * caller must use &queue
     */
-    class func addLeftNodeToNodeAndQueue(node: BSNode, inout queue: Array<BSNode>, string0: String) {
+    class func addLeftNodeToNodeAndQueue(node: BSNode, inout queue: [BSNode], string0: String) {
         
         var nodeLeftIndex0 : String.Index;
 
@@ -288,7 +288,7 @@ class BSShuffler : NSObject {
     * @param queue declared inout so function can mutate it's value
     * caller must use &queue
     */
-    class func addRightNodeToNodeAndQueue(node: BSNode, inout queue: Array<BSNode>, string1: String) {
+    class func addRightNodeToNodeAndQueue(node: BSNode, inout queue: [BSNode], string1: String) {
         
         var nodeRightIndex1 : String.Index;
 
